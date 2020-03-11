@@ -19,18 +19,19 @@ print(sp.encode_as_ids('This is a test'))
 print(sp.decode_pieces(['▁This', '▁is', '▁a', '▁t', 'est']))
 print(sp.decode_ids([209, 31, 9, 375, 586]))
 '''
-
+'#WeAppreciateThePower Baby plug in upload your mind http://ow.ly'
 #====================PARTE 1=============================================
 
-spm.SentencePieceTrainer.train('--input=dataset.csv --model_prefix=m_word --model_type=word --vocab_size=2000 --normalization_rule_name=nfkc_cf')
-#spm.SentencePieceTrainer.train('--input=botchan.txt --model_prefix=m_word --model_type=word --vocab_size=2000')
-#spm.SentencePieceTrainer.train('--input=botchan.txt --model_prefix=m --vocab_size=2000' '--normalization_rule_name=nfkc_cf)
-#sp = spm.SentencePieceProcessor()
-#sp.load('m.model')
-                               
-sp_word = spm.SentencePieceProcessor()
-sp_word.load('m_word.model')
-print(sp_word.encode_as_pieces('#WeAppreciateThePower Baby plug in upload your mind http://ow.ly'))
+def modelWord(cadena):
+    spm.SentencePieceTrainer.train('--input=dataset.csv --model_prefix=m_word --model_type=word --vocab_size=2000 --normalization_rule_name=nfkc_cf')
+    #spm.SentencePieceTrainer.train('--input=botchan.txt --model_prefix=m_word --model_type=word --vocab_size=2000')
+    #spm.SentencePieceTrainer.train('--input=botchan.txt --model_prefix=m --vocab_size=2000' '--normalization_rule_name=nfkc_cf)
+    #sp = spm.SentencePieceProcessor()
+    #sp.load('m.model')                 
+    sp_word = spm.SentencePieceProcessor()
+    sp_word.load('m_word.model')
+
+    return(sp_word.encode_as_pieces(cadena))
 
 '''
 # Gets all tokens as Python list.
