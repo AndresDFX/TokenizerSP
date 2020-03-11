@@ -22,7 +22,7 @@ def modelCadena(cadena):
     return(sp_word.encode_as_pieces(cadena))
 
 def modelUsuario(cadena):  
-    spm.SentencePieceTrainer.train('--input=dataset.csv --model_prefix=m_user --user_defined_symbols=<unk>,</s>,<s>,<sep>,<cls> --vocab_size=2000')
+    spm.SentencePieceTrainer.train('--input=tweets_clean.txt --model_prefix=m_user --user_defined_symbols=<unk>,</s>,<s>,<sep>,<cls> --vocab_size=2000')
     sp_user = spm.SentencePieceProcessor()
     sp_user.load('m_user.model')
 

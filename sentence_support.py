@@ -7,7 +7,9 @@
 #    Mar 10, 2020 05:58:31 PM -05  platform: Linux
 
 import sys
-from model import *
+
+
+from logic import *
 
 try:
     import Tkinter as tk
@@ -51,8 +53,3 @@ def destroy_window():
 if __name__ == '__main__':
     import sentence
     sentence.vp_start_gui()
-
-
-
-
-
