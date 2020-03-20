@@ -5,9 +5,10 @@
 #  in conjunction with Tcl version 8.6
 #    Mar 10, 2020 05:55:46 PM -05  platform: Linux
 #    Mar 10, 2020 05:58:31 PM -05  platform: Linux
+#    Mar 19, 2020 09:07:54 PM -05  platform: Linux
+#    Mar 19, 2020 10:01:57 PM -05  platform: Linux
 
 import sys
-
 
 from logic import *
 
@@ -44,6 +45,20 @@ def modelUser():
         w.Text2.insert(tk.END, modelUsuario(sword))   
     sys.stdout.flush()
 
+def modelWord():    
+    sword = w.Text1.get("1.0", tk.END).strip()
+    if (sword!=""):
+        w.Text2.delete("1.0", tk.END) 
+        w.Text2.insert(tk.END, modelCadena(sword))   
+    sys.stdout.flush()
+
+def modelUser():    
+    sword = w.Text1.get("1.0", tk.END).strip()
+    if (sword!=""):
+        w.Text2.delete("1.0", tk.END) 
+        w.Text2.insert(tk.END, modelUsuario(sword))   
+    sys.stdout.flush()
+
 def destroy_window():
     # Function which closes the window.
     global top_level
@@ -53,3 +68,8 @@ def destroy_window():
 if __name__ == '__main__':
     import sentence
     sentence.vp_start_gui()
+
+
+
+
+
